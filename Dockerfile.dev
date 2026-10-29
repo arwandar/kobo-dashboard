@@ -1,0 +1,12 @@
+FROM node:lts-slim
+ENV NODE_ENV="development"
+WORKDIR /app
+
+COPY package*.json ./
+
+COPY .eslintrc.cjs ./
+
+
+RUN npm install
+EXPOSE 5174
+CMD ["npm", "run", "dev"]
